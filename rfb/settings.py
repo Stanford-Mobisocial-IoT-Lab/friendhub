@@ -25,7 +25,7 @@ SECRET_KEY = 'oln0xt(nsn=wjksmj(sp_7(!oo_c6*g(_*-6$t*h_b0k+w98=g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['colby.stanford.edu']
 
 
 # Application definition
@@ -119,7 +119,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'rfb/static/'
+STATIC_ROOT = '/opt/rfb/static/'
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
 
