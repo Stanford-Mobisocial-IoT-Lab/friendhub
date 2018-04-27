@@ -1,21 +1,29 @@
-from django.http import HttpResponse, JsonResponse
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.decorators import api_view, permission_classes
+from django.http import JsonResponse
+from rest_framework import status, permissions
+from rest_framework.authentication import BasicAuthentication
+from rest_framework.views import APIView
 from bbs.models import Post
 from bbs.serializer import BbsSerializer
 
 
-# Create your views here.
-def index(request):
-    return HttpResponse("hello")
+class PostList(APIView):
+    permission_classes = (permissions.IsAuthenticated, )
+    authentication_classes = (BasicAuthentication, )
 
-
-@api_view(['GET'])
-@permission_classes((IsAuthenticated, ))
-def list_posts(request):
-    if request.method == 'GET':
-        post = Post.objects.all()
-        serializer = BbsSerializer(post, many=True)
+    @staticmethod
+    def get(request):
+        posts = Post.objects.all()
+        serializer = BbsSerializer(posts, many=True)
         return JsonResponse(serializer.data, safe=False)
+
+    @staticmethod
+    def post(request):
+        request.data['author'] = request.user.id
+        serializer = BbsSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status=status.HTTP_201_CREATED, safe=False)
+        return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 
