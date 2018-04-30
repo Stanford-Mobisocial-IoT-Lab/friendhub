@@ -21,7 +21,10 @@ class PostList(APIView):
         request.data['author'] = request.user.id
         serializer = BbsSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            Post.objects.create(
+                post=request.data['post'],
+                author=request.user
+            )
             return JsonResponse(serializer.data, status=status.HTTP_201_CREATED, safe=False)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
