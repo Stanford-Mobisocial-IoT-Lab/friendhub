@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['colby.stanford.edu']
 INSTALLED_APPS = [
     'rest_framework',
     'bbs.apps.BbsConfig',
+    'sticky_notes.apps.StickyNotesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
