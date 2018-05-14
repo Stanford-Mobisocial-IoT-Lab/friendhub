@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'bbs.apps.BbsConfig',
     'sticky_notes.apps.StickyNotesConfig',
+    'partner_finder.apps.PartnerFinderConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
