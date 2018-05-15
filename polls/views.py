@@ -29,7 +29,6 @@ def validate_request(request, method, expected_fields):
 	return (True, data)
 
 
-
 # Ensure that the question id matches an open question in the database.
 # Return (valid, question_or_response), where question_or_response is a Question object
 # if exactly one question matches the query, otherwise a JsonResponse indicating failure
