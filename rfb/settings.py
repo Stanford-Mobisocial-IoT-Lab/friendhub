@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'bbs.apps.BbsConfig',
     'sticky_notes.apps.StickyNotesConfig',
 	'polls.apps.PollsConfig',
+    'partner_finder.apps.PartnerFinderConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'rfb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-         'DIRS': [],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,13 +84,13 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     # }
-	'default': {
-		'ENGINE': 'django.db.backends.mysql',
-		'OPTIONS': {
-			'read_default_file': '/opt/diyfb/diyfb/mysql.cnf',
-			'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-		},
-	}
+   'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': '/opt/diyfb/diyfb/mysql.cnf',
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        },
+    }
 }
 
 

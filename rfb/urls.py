@@ -22,4 +22,8 @@ urlpatterns = [
 	path(r'api/bbs/', include('bbs.urls')),
 	path(r'api/sticky_notes/', include('sticky_notes.urls')),
 	path(r'api/polls/', include('polls.urls')),
+    path(r'admin/', admin.site.urls),
+    path(r'api/bbs/', include('bbs.urls')),
+    path(r'api/sticky_notes/', include('sticky_notes.urls')),
+    path(r'api/partner_finder/', include('partner_finder.urls'))
 ]
