@@ -25,7 +25,7 @@ SECRET_KEY = 'oln0xt(nsn=wjksmj(sp_7(!oo_c6*g(_*-6$t*h_b0k+w98=g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['colby.stanford.edu']
 
 
 # Application definition
