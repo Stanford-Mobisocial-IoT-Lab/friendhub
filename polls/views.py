@@ -71,7 +71,7 @@ def results_close_helper(request, close_poll=False):
 		q.save()
 		
 	return JsonResponse({'success': True,
-						 'date': q.date,
+						 'date': q.published_date,
 						 'author': q.author,
 						 'question': q.question_text,
 						 'total_votes': q.get_total_votes(),
