@@ -2,4 +2,5 @@
 *.pyc
 */__pycache__/
 rfb/mysql.cnf
-db.sqlite3
+db.sqlite*
+.DS_STORE
