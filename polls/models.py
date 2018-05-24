@@ -18,7 +18,9 @@ class Question(models.Model):
 	is_open = models.BooleanField(default=True)
 	max_choice_id = models.PositiveIntegerField(default=0)
 
-
+	class Meta:
+		managed=True
+	
 class Choice(models.Model):
 	def __str__(self):
 		return self.text
@@ -34,3 +36,5 @@ class Choice(models.Model):
 	c_id = models.PositiveIntegerField(default=0)
 	votes = models.IntegerField(default=0)
 	
+	class Meta:
+		managed=True
