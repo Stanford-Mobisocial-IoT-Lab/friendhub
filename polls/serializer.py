@@ -14,7 +14,7 @@ class QuestionSerializer(serializers.ModelSerializer):
 	
 	class Meta:
 		model = models.Question
-		fields = ('published_date', 'author', 'text', 'is_open', 'total_votes', 'choices')
+		fields = ('published_date', 'author', 'text', 'is_open', 'total_votes', 'choices', 'id')
 		
 	def get_total_votes(self, q):
 		votes = 0
