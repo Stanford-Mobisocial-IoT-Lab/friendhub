@@ -12,10 +12,6 @@ class ActivityList(APIView):
 
     @staticmethod
     def get(request):
-        if hasattr(request, 'activity'):
-            activities = Activity.objects.filter(activity=request.activity)
-            serializer = ActivitySerializer(activities, many=True)
-            return JsonResponse(serializer.data, safe=False)
         activities = Activity.objects.all()
         serializer = ActivitySerializer(activities, many=True)
         return JsonResponse(serializer.data, safe=False)
