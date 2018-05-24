@@ -4,7 +4,7 @@ import datetime
 # Create your models here.
 class Question(models.Model):
 	def __str__(self):
-		return self.question_text
+		return self.text
 
 	@classmethod
 	def create(cls, qtext, author, pubdate=None):
@@ -21,7 +21,7 @@ class Question(models.Model):
 
 class Choice(models.Model):
 	def __str__(self):
-		return self.choice_text
+		return self.text
 
 	@classmethod
 	def create(cls, ctext, question):
