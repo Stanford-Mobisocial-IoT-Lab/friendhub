@@ -40,6 +40,7 @@ class MatchList(APIView):
                     min_end_time = max(a1.end_time, a2.end_time)
                     if max_start_time < min_end_time:
                         matches.append({
+                            'activity': a1.activiy,
                             'email': a1.email,
                             'match_organizer': a2.organizer,
                             'match_email': a2.email,
