@@ -18,6 +18,7 @@ class ActivityList(APIView):
 
     @staticmethod
     def post(request):
+        request.data['email'] = request.data['email']['value']
         serializer = ActivitySerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
