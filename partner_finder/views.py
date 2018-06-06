@@ -38,6 +38,7 @@ class MatchList(APIView):
                 if a1.email != a2.email and a1.activity == a2.activity:
                     max_start_time = max(a1.start_time, a2.start_time)
                     min_end_time = min(a1.end_time, a2.end_time)
+                    message = 'A match is found for %s: \n %s (%s) from %s to %s' % (a1.activity, a2.organizer, a2.email, max_start_time, min_end_time)
                     if max_start_time < min_end_time:
                         matches.append({
                             'activity': a1.activity,
@@ -45,7 +46,8 @@ class MatchList(APIView):
                             'match_organizer': a2.organizer,
                             'match_email': a2.email,
                             'start_time': max_start_time,
-                            'end_time': min_end_time
+                            'end_time': min_end_time,
+                            'message': message
                         })
         return JsonResponse(matches, safe=False)
 
